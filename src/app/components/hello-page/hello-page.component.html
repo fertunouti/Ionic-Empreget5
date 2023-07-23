@@ -1,0 +1,67 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-menu-button slot="start" color="primary"></ion-menu-button>
+    <ion-img src="../../../../assets/images/Logo-transparente.png"></ion-img>
+  </ion-toolbar>
+</ion-header>
+
+
+
+<ion-content>
+  <div class="ion-text-wrap">
+    <br>
+    <h2 >{{emailUserAtual}}</h2>
+    <p>Bem vindo ao app de serviço de limpeza mais amado do Brasil</p>
+  </div>
+  <br>
+
+  <ion-header>
+    <div class="Capa">
+      <img src="../../../../assets/images/home.png">
+    </div>
+    <div class="text1">
+       
+    </div>
+    <app-busca-nome (mudouValor) = "onMudouTermo($event)" ></app-busca-nome>
+  <div>
+    <ul *ngFor="let prestador of prestadoresByName">
+
+      <ion-item>
+      <ion-avatar slot="start">
+      <img alt="Silhouette of a person's head" src="../../../../assets/images/avatar1.png" />
+      </ion-avatar>
+      <ion-label fill="clear" routerLink="/perfil-prestador">
+      {{prestador.nome}}
+      </ion-label>
+      <ion-col class="coluna-view">
+      <ion-button fill="clear" routerLink="/perfil-prestador">view</ion-button>
+      </ion-col>
+      </ion-item>
+    </ul>
+
+  </div>
+ 
+  </ion-header>
+  <br><br>
+  <div class="ion-header-search">
+    <p>Encontre prestadores próximos a você </p>
+    <ion-list>
+      <ion-item>
+        <ion-select aria-label="Fruit" placeholder="Região">
+          <ion-select-option value="Centro">Centro</ion-select-option>
+          <ion-select-option value="Norte">Norte</ion-select-option>
+          <ion-select-option value="Sul">Sul</ion-select-option>
+          <ion-select-option value="Leste">Leste</ion-select-option>
+          <ion-select-option value="Oeste">Oeste</ion-select-option>
+          <ion-select-option value="Oeste">Todos</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+  </div>
+
+ <ion-list-header> Prestadores:</ion-list-header>
+<app-prestador-read></app-prestador-read>
+<app-prestador-read-by-name></app-prestador-read-by-name>
+
+
+</ion-content>

@@ -1,0 +1,16 @@
+<ul *ngFor="let usuario of usuarios">
+      <!-- {{ usuario.id }} => {{ usuario.email }} -->
+<ion-item>
+  <ion-avatar slot="start">
+    <img alt="Silhouette of a person's head" src="../../../../assets/images/avatar1.png" />
+  </ion-avatar>
+  <ion-label fill="clear" routerLink="/perfil-prestador">
+    {{usuario.email}}
+  </ion-label>
+  <ion-col class="coluna-view">
+    <ion-button fill="clear" routerLink="/perfil-prestador">view</ion-button>
+  </ion-col>
+</ion-item>
+
+
+</ul>
